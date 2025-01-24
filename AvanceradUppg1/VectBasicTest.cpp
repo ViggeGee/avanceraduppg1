@@ -15,7 +15,12 @@ using std::cout;
 #include "Vector.h"
 
 template< class T>
-void swap(Vector<T>& lhs, Vector<T>& rhs);
+void swap(Vector<T>& lhs, Vector<T>& rhs)
+{
+	std::swap(lhs.data, rhs.data);
+	std::swap(lhs.size_, rhs.size_);
+	std::swap(lhs.capacity_, rhs.capacity_);
+}
 
 struct Cbasic {
 	int i;
@@ -56,7 +61,7 @@ void TestBasic() {
 		assert(bar <= bar && fox >= fox);
 		Vector<char> foxa("foxa");
 		assert(fox != foxa && foxa != fox);
-		assert(fox<foxa&& foxa>fox);
+		assert(fox<foxa && foxa>fox);
 	}
 #endif
 #if LEVEL>=4
@@ -132,8 +137,8 @@ void TestBasic() {
 #if LEVEL>=9
 	{
 		FOX BAR;
-		Fox.data();
-		assert(&Fox[0] == Fox.data());
+		Fox.Data();
+		assert(&Fox[0] == Fox.Data());
 	}
 #endif
 

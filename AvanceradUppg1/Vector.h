@@ -154,6 +154,7 @@ public:
 		return data[i];
 	}
 
+
 	void reserve(size_t n);
 	void shrink_to_fit();
 	void resize(size_t n);
@@ -165,8 +166,11 @@ public:
 	size_t capacity() const noexcept;
 	bool Invariant() const;
 
-private:
+	//Litet d i testkod? fel??
+	const T* Data() const noexcept;
+
 	T* data;
 	size_t size_;
 	size_t capacity_;
+private:
 };
